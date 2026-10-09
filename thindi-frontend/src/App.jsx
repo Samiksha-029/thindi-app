@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import QRScanner from './components/QRScanner'
+import LandingPage from './components/LandingPage'
 import './App.css'
 
-function App() {
+function ScanPage() {
   const [scanning, setScanning] = useState(false)
   const [vendorId, setVendorId] = useState(null)
 
@@ -36,6 +38,15 @@ function App() {
         </>
       )}
     </main>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/scan" element={<ScanPage />} />
+    </Routes>
   )
 }
 
