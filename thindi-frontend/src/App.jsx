@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import OrderTracking from "./components/OrderTracking";
+import VendorOrderPanel from "./components/VendorOrderPanel";
 import QRScanner from './components/QRScanner'
 import LandingPage from './components/LandingPage'
 import './App.css'
@@ -46,6 +48,8 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/scan" element={<ScanPage />} />
+      <Route path="/orders" element={<OrderTracking />} />
+      <Route path="/vendor/orders" element={<VendorOrderPanel />} />
     </Routes>
   )
 }
